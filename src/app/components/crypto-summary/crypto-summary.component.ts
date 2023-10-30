@@ -34,7 +34,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   unavailableInvestedvalue: number = 0;
   unavailableFormattedCurrentValue = '';
   unavailableFormattedInvestedvalue = '';
-  url = '/assets/json/data.json';
+  url = 'assets/json/data.json';
 
   constructor(private livePrice: LivePriceService, private http: HttpClient) {}
 
