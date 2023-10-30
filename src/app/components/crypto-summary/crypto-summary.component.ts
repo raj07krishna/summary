@@ -4,17 +4,17 @@ import { MatTableDataSource } from '@angular/material/table';
 import * as XLSX from 'xlsx';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { HttpClient } from '@angular/common/http';
 
 type AOA = any[][];
+
 @Component({
-  selector: 'app-excel-reader',
-  templateUrl: './excel-reader.component.html',
-  styleUrls: ['./excel-reader.component.scss'],
+  selector: 'app-crypto-summary',
+  templateUrl: './crypto-summary.component.html',
+  styleUrls: ['./crypto-summary.component.scss'],
 })
-export class ExcelReaderComponent implements OnInit, AfterViewInit {
+export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   data: AOA = [[], []];
-  wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'array' };
-  fileName: string = 'SheetJS.xlsx';
   liveData: any;
   isLiveDataAvailable = false;
   dataSourceForAvaialble: MatTableDataSource<any> =
@@ -27,7 +27,6 @@ export class ExcelReaderComponent implements OnInit, AfterViewInit {
   cryptoMap = new Map();
   currentValue: number = 0;
   investedvalue: number = 0;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   formattedCurrentValue = '';
   formattedInvestedvalue = '';
@@ -35,15 +34,15 @@ export class ExcelReaderComponent implements OnInit, AfterViewInit {
   unavailableInvestedvalue: number = 0;
   unavailableFormattedCurrentValue = '';
   unavailableFormattedInvestedvalue = '';
+  url = '/assets/json/data.json';
 
-  constructor(private livePrice: LivePriceService) {}
+  constructor(private livePrice: LivePriceService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    // this.getLatestLiveData()
+    this.processJsonData();
   }
 
   ngAfterViewInit() {
-    this.dataSourceForAvaialble.paginator = this.paginator;
     this.dataSourceForAvaialble.sort = this.sort;
   }
 
@@ -54,66 +53,43 @@ export class ExcelReaderComponent implements OnInit, AfterViewInit {
     this.isLiveDataAvailable = true;
   }
 
-  onFileChange(evt: any) {
+  processJsonData() {
     this.dataSourceForAvaialble = new MatTableDataSource<any>();
     this.displayedColumns = [];
-    /* wire up file reader */
-    const target: DataTransfer = <DataTransfer>evt.target;
-    if (target.files.length !== 1) throw new Error('Cannot use multiple files');
-    const reader: FileReader = new FileReader();
-    reader.readAsArrayBuffer(target.files[0]);
-    reader.onload = (e: any) => {
-      /* read workbook */
-      const bstr: string = e.target.result;
-      const wb: XLSX.WorkBook = XLSX.read(bstr, { type: 'binary' });
-
-      /* grab first sheet */
-      const wsname: string = wb.SheetNames[0];
-      const ws: XLSX.WorkSheet = wb.Sheets[wsname];
-
-      /* save data */
-      this.data = <AOA>XLSX.utils.sheet_to_json(ws, { header: 1 });
+    this.http.get(this.url).subscribe((jsonData: any) => {
+      this.data = jsonData;
       console.log(this.data);
       // this.withDrawlData = <AOA>(XLSX.utils.sheet_to_json(wsWithdrawl, { header: 1 }));
       this.isDataAvailable = true;
-      let key = '';
-      for (let i = 0; i < this.data.length; i++) {
+      this.displayedColumns = [];
+      this.displayedColumns.push('coin');
+      this.displayedColumns.push('volume');
+      this.displayedColumns.push('averagePrice');
+      this.displayedColumns.push('totalPrice');
+      this.displayedColumns.push('currentPrice');
+      this.displayedColumns.push('currentValue');
+      this.displayedColumns.push('profitOrLossValue');
+      this.displayedColumns.push('profitPercentage');
+      Object.values(this.data).forEach((value: any) => {
         let obj = Object.create({});
-        if (i === 0) {
-          this.displayedColumns = [];
-          this.displayedColumns.push('coin');
-          this.displayedColumns.push('volume');
-          this.displayedColumns.push('averagePrice');
-          this.displayedColumns.push('totalPrice');
-          this.displayedColumns.push('currentPrice');
-          this.displayedColumns.push('currentValue');
-          this.displayedColumns.push('profitOrLossValue');
-          this.displayedColumns.push('profitPercentage');
-        } else {
-          this.data[i];
-          if (this.data[i][0] && this.data[i][0].length) {
-            key = `${this.data[i][0]}INR`;
-            obj['coin'] = key;
-          }
-          if (this.data[i][1] === 'All' && this.data[i][2] === 'All' && key && this.data[i][3] > 0) {
-            obj['volume'] = this.data[i][3];
-            obj['averagePrice'] = this.data[i][4];
-            obj['totalPrice'] = this.data[i][5];
-            obj['coin'] = key;
-            key = '';
-            obj['currentPrice'] = 0;
-            obj['currentValue'] = 0;
-            obj['profitOrLossValue'] = 0;
-            obj['isProfitable'] = false;
-            obj['profitPercentage'] = 0;
-            this.cryptoMap.set(obj['coin'], obj);
-            this.dataSourceArray.push(obj);
-          }
+        console.log(Array.isArray(value));
+        if (value['volume'] > 0) {
+          obj['coin'] = value['coin'];
+          obj['volume'] = value['volume'];
+          obj['averagePrice'] = value['averagePrice'];
+          obj['totalPrice'] = value['totalPrice'];
+          obj['currentPrice'] = 0;
+          obj['currentValue'] = 0;
+          obj['profitOrLossValue'] = 0;
+          obj['isProfitable'] = false;
+          obj['profitPercentage'] = 0;
+          this.cryptoMap.set(obj['coin'], obj);
+          this.dataSourceArray.push(obj);
         }
-      }
+      });
       console.log(Object.fromEntries(this.cryptoMap));
       this.refresh();
-    };
+    });
   }
 
   async refresh() {
