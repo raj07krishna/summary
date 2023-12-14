@@ -18,7 +18,7 @@
           <mat-button-toggle [ngClass]="(this.currentValue-this.investedvalue) > 0 ? 'green' : 'red' " value="underline">
             Profit/Loss
             <mat-divider></mat-divider>
-            {{(this.currentValue-this.investedvalue) }}}
+            {{(this.currentValue-this.investedvalue) }}
           </mat-button-toggle>
           <mat-button-toggle
             [ngClass]="((this.currentValue-this.investedvalue)/this.investedvalue)*100 > 0 ? 'green' : 'red' "

@@ -135,11 +135,11 @@
         "formattedCurrentValue": "₹73,509.84025",
         "formattedProfitOrLossValue": "₹2,010.77188"
     },
-    "BTTINR": {
+    "BTTCINR": {
         "volume": 26873000,
         "averagePrice": 0.00026395050984259294,
         "totalPrice": 7093.142051000001,
-        "coin": "BTTINR",
+        "coin": "BTTCINR",
         "currentPrice": 0,
         "currentValue": 0,
         "profitOrLossValue": 0,
@@ -577,11 +577,11 @@
         "formattedCurrentValue": "₹11,362.9701825",
         "formattedProfitOrLossValue": "-₹2,517.04060741"
     },
-    "ThorchainINR": {
+    "runeINR": {
         "volume": 15.076,
         "averagePrice": 275.8224993366941,
         "totalPrice": 4158.3,
-        "coin": "ThorchainINR",
+        "coin": "runeINR",
         "currentPrice": 0,
         "currentValue": 0,
         "profitOrLossValue": 0,
