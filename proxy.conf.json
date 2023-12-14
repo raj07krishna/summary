@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "https://api.wazirx.com/api/v2",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
