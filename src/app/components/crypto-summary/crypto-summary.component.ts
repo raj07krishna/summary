@@ -35,6 +35,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   unavailableFormattedCurrentValue = '';
   unavailableFormattedInvestedvalue = '';
   url = 'assets/json/data.json';
+  alltimehighUrl = 'assets/json/alltimehigh.json'
   allTimeHighMap=new Map();
   TotalProfitPossible = 0;
   formattedTotalProfitPossible = ''
@@ -42,9 +43,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   constructor(private livePrice: LivePriceService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    fetch("/assets/json/alltimehigh.json")
-    .then((res) => res.json())
-    .then((jsonData) => {
+    this.http.get(this.alltimehighUrl).subscribe((jsonData) => {
       this.allTimeHighMap = new Map(Object.entries(jsonData));
       this.processJsonData();
     })
