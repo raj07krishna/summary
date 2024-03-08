@@ -8,24 +8,29 @@
           <mat-button-toggle value="italic">
             Total
             <mat-divider></mat-divider>
-            {{this.formattedInvestedvalue }}
+            {{formattedInvestedvalue }}
           </mat-button-toggle>
           <mat-button-toggle value="bold">
             Current
             <mat-divider></mat-divider>
-            {{this.formattedCurrentValue }}
+            {{formattedCurrentValue }}
           </mat-button-toggle>
-          <mat-button-toggle [ngClass]="(this.currentValue-this.investedvalue) > 0 ? 'green' : 'red' " value="underline">
+          <mat-button-toggle [ngClass]="(currentValue-investedvalue) > 0 ? 'green' : 'red' " value="underline">
             Profit/Loss
             <mat-divider></mat-divider>
-            {{(this.currentValue-this.investedvalue) }}
+            {{(currentValue-investedvalue) }}
           </mat-button-toggle>
           <mat-button-toggle
-            [ngClass]="((this.currentValue-this.investedvalue)/this.investedvalue)*100 > 0 ? 'green' : 'red' "
+            [ngClass]="((currentValue-investedvalue)/investedvalue)*100 > 0 ? 'green' : 'red' "
             value="underline">
             %
             <mat-divider></mat-divider>
-            {{((this.currentValue-this.investedvalue)/this.investedvalue)*100}}
+            {{((currentValue-investedvalue)/investedvalue)*100}}
+          </mat-button-toggle>
+          <mat-button-toggle value="italic">
+            Max Profit Possible
+            <mat-divider></mat-divider>
+            {{formattedTotalProfitPossible }}
           </mat-button-toggle>
         </mat-button-toggle-group>
       </div>
@@ -34,26 +39,26 @@
           <mat-button-toggle value="italic">
             Total
             <mat-divider></mat-divider>
-            {{this.unavailableFormattedInvestedvalue }}
+            {{unavailableFormattedInvestedvalue }}
           </mat-button-toggle>
           <mat-button-toggle value="bold">
             Current
             <mat-divider></mat-divider>
-            {{this.unavailableFormattedCurrentValue }}
+            {{unavailableFormattedCurrentValue }}
           </mat-button-toggle>
           <mat-button-toggle
-            [ngClass]="(this.unavailableCurrentValue-this.unavailableInvestedvalue) > 0 ? 'green' : 'red' "
+            [ngClass]="(unavailableCurrentValue-unavailableInvestedvalue) > 0 ? 'green' : 'red' "
             value="underline">
             Profit/Loss
             <mat-divider></mat-divider>
-            {{(this.unavailableCurrentValue-this.unavailableInvestedvalue) }}}
+            {{(unavailableCurrentValue-unavailableInvestedvalue) }}
           </mat-button-toggle>
           <mat-button-toggle
-            [ngClass]="((this.unavailableCurrentValue-this.unavailableInvestedvalue)/this.unavailableInvestedvalue)*100 > 0 ? 'green' : 'red' "
+            [ngClass]="((unavailableCurrentValue-unavailableInvestedvalue)/unavailableInvestedvalue)*100 > 0 ? 'green' : 'red' "
             value="underline">
             %
             <mat-divider></mat-divider>
-            {{((this.unavailableCurrentValue-this.unavailableInvestedvalue)/this.unavailableInvestedvalue)*100}}
+            {{((unavailableCurrentValue-unavailableInvestedvalue)/unavailableInvestedvalue)*100}}
           </mat-button-toggle>
         </mat-button-toggle-group>
       </div>
@@ -73,12 +78,6 @@
           <td mat-cell *matCellDef="let row"> {{row.coin}} </td>
         </ng-container>
   
-  
-        <ng-container matColumnDef="volume">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Volume </th>
-          <td mat-cell *matCellDef="let row"> {{row.formattedVolume}} </td>
-        </ng-container>
-  
         <ng-container matColumnDef="averagePrice">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> averagePrice </th>
           <td mat-cell *matCellDef="let row"> {{row.formattedAveragePrice }} </td>
@@ -88,10 +87,16 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> totalPrice </th>
           <td mat-cell *matCellDef="let row"> {{row.formattedTotalPrice }} </td>
         </ng-container>
+
   
         <ng-container matColumnDef="currentPrice">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> current Price </th>
           <td mat-cell *matCellDef="let row"> {{row.formattedCurrentPrice }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="allTimeHighPrice">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> allTimeHigh </th>
+          <td mat-cell *matCellDef="let row"> {{row.allTimeHighPrice }} </td>
         </ng-container>
   
         <ng-container matColumnDef="currentValue">
@@ -109,7 +114,14 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Profit/Loss %</th>
           <td mat-cell *matCellDef="let row" [ngClass]="row.isProfitable ? 'green': 'red'"> {{row.profitPercentage}} </td>
         </ng-container>
-  
+        <ng-container matColumnDef="maxProfitPossible">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> maxProfitPossible </th>
+          <td mat-cell *matCellDef="let row"> {{row.maxProfitPossible}} </td>
+        </ng-container>
+        <ng-container matColumnDef="maxProfitPossiblePercentage">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> maxProfit % </th>
+          <td mat-cell *matCellDef="let row"> {{row.maxProfitPossiblePercentage}} </td>
+        </ng-container>
   
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -132,12 +144,6 @@
           <td mat-cell *matCellDef="let row"> {{row.coin}} </td>
         </ng-container>
   
-  
-        <ng-container matColumnDef="volume">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Volume </th>
-          <td mat-cell *matCellDef="let row"> {{row.formattedVolume}} </td>
-        </ng-container>
-  
         <ng-container matColumnDef="averagePrice">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> averagePrice </th>
           <td mat-cell *matCellDef="let row"> {{row.formattedAveragePrice }} </td>
@@ -152,7 +158,10 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> current Price </th>
           <td mat-cell *matCellDef="let row"> {{row.formattedCurrentPrice }} </td>
         </ng-container>
-  
+        <ng-container matColumnDef="allTimeHighPrice">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> allTimeHigh </th>
+          <td mat-cell *matCellDef="let row"> {{row.allTimeHighPrice }} </td>
+        </ng-container>
         <ng-container matColumnDef="currentValue">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> current Value </th>
           <td mat-cell *matCellDef="let row"> {{row.formattedCurrentValue }} </td>
@@ -168,7 +177,14 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Profit/Loss %</th>
           <td mat-cell *matCellDef="let row" [ngClass]="row.isProfitable ? 'green': 'red'"> {{row.profitPercentage}} </td>
         </ng-container>
-  
+        <ng-container matColumnDef="maxProfitPossible">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> maxProfitPossible </th>
+          <td mat-cell *matCellDef="let row"> {{row.maxProfitPossible}} </td>
+        </ng-container>
+        <ng-container matColumnDef="maxProfitPossiblePercentage">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> maxProfit % </th>
+          <td mat-cell *matCellDef="let row"> {{row.maxProfitPossiblePercentage}} </td>
+        </ng-container>
   
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

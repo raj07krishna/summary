@@ -35,11 +35,19 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   unavailableFormattedCurrentValue = '';
   unavailableFormattedInvestedvalue = '';
   url = 'assets/json/data.json';
+  allTimeHighMap=new Map();
+  TotalProfitPossible = 0;
+  formattedTotalProfitPossible = ''
 
   constructor(private livePrice: LivePriceService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.processJsonData();
+    fetch("./../../../../assets/json/alltimehigh.json")
+    .then((res) => res.json())
+    .then((jsonData) => {
+      this.allTimeHighMap = new Map(Object.entries(jsonData));
+      this.processJsonData();
+    })
   }
 
   ngAfterViewInit() {
@@ -63,13 +71,16 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       this.isDataAvailable = true;
       this.displayedColumns = [];
       this.displayedColumns.push('coin');
-      this.displayedColumns.push('volume');
       this.displayedColumns.push('averagePrice');
       this.displayedColumns.push('totalPrice');
+      this.displayedColumns.push('allTimeHighPrice');
       this.displayedColumns.push('currentPrice');
       this.displayedColumns.push('currentValue');
       this.displayedColumns.push('profitOrLossValue');
       this.displayedColumns.push('profitPercentage');
+      this.displayedColumns.push('maxProfitPossible');
+      this.displayedColumns.push('maxProfitPossiblePercentage');
+
       Object.values(this.data).forEach((value: any) => {
         let obj = Object.create({});
         console.log(Array.isArray(value));
@@ -84,6 +95,11 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
           obj['isProfitable'] = false;
           obj['profitPercentage'] = 0;
           this.cryptoMap.set(obj['coin'], obj);
+          if(this.allTimeHighMap.has(value['coin'])) {
+            obj['allTimeHighPrice'] = this.allTimeHighMap.get(value['coin']).allTimeHigh;
+            obj['maxProfitPossible'] = this.allTimeHighMap.get(value['coin']).allTimeHigh * value['volume'];
+            obj['maxProfitPossiblePercentage'] =  Math.floor(((obj['maxProfitPossible']-value['totalPrice'])/value['totalPrice']) * 100)
+          }
           this.dataSourceArray.push(obj);
         }
       });
@@ -110,6 +126,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         row.profitPercentage = (row.profitOrLossValue / row.totalPrice) * 100;
         this.currentValue += row.currentValue;
         this.investedvalue += row.totalPrice;
+        this.TotalProfitPossible +=row.maxProfitPossible;
         this.dataSourceForAvaialble.data.push(row);
         this.applyIndianCurrencyFormatter(row);
       } else {
@@ -149,6 +166,14 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
     });
     this.unavailableFormattedInvestedvalue = Number(
       this.unavailableInvestedvalue
+    ).toLocaleString('en-IN', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+      style: 'currency',
+      currency: 'INR',
+    });
+    this.formattedTotalProfitPossible = Number(
+      this.TotalProfitPossible
     ).toLocaleString('en-IN', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
@@ -211,6 +236,14 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
     );
     obj['formattedProfitOrLossValue'] = Number(
       obj['profitOrLossValue']
+    ).toLocaleString('en-IN', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 8,
+      style: 'currency',
+      currency: 'INR',
+    });
+    obj['maxProfitPossible'] = Number(
+      obj['maxProfitPossible']
     ).toLocaleString('en-IN', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 8,
