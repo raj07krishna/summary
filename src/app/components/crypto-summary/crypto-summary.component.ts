@@ -42,7 +42,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   constructor(private livePrice: LivePriceService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    fetch("./../../../../assets/json/alltimehigh.json")
+    fetch("/assets/json/alltimehigh.json")
     .then((res) => res.json())
     .then((jsonData) => {
       this.allTimeHighMap = new Map(Object.entries(jsonData));
