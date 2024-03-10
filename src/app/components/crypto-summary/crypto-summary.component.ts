@@ -96,8 +96,8 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
           this.cryptoMap.set(obj['coin'], obj);
           if(this.allTimeHighMap.has(value['coin'])) {
             obj['allTimeHighPrice'] = this.allTimeHighMap.get(value['coin']).allTimeHigh;
-            obj['maxProfitPossible'] = this.allTimeHighMap.get(value['coin']).allTimeHigh * value['volume'];
-            obj['maxProfitPossiblePercentage'] =  Math.floor(((obj['maxProfitPossible']-value['totalPrice'])/value['totalPrice']) * 100)
+            obj['maxProfitPossible'] = obj['allTimeHighPrice'] * value['volume'] - value['totalPrice'];
+            obj['maxProfitPossiblePercentage'] =  Math.floor(((obj['maxProfitPossible'])/value['totalPrice']) * 100)
           }
           this.dataSourceArray.push(obj);
         }
@@ -119,6 +119,11 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         );
         let currentValue = currentPrice * row.volume;
         row.currentPrice = currentPrice;
+        if(currentPrice > row['allTimeHighPrice'] ) {
+          row['allTimeHighPrice'] = currentPrice;
+          row['maxProfitPossible'] = (row['allTimeHighPrice'] * row['volume']) - row['totalPrice'];
+          row['maxProfitPossiblePercentage'] =  Math.floor((row['maxProfitPossible']/row['totalPrice']) * 100)
+        }
         row.currentValue = currentValue;
         row.profitOrLossValue = currentValue - row.totalPrice;
         if (row.profitOrLossValue > 0) row.isProfitable = true;
