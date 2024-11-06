@@ -10,7 +10,7 @@ export class LivePriceService {
   constructor(private http: HttpClient) { }
 
   getCryptoLivePrice(){
-   return this.http.get('https://api.wazirx.com/api/v2/tickers', {
+   return this.http.get('https://api.coindcx.com/exchange/ticker', {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': 'true',

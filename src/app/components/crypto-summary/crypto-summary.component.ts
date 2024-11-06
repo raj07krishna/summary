@@ -55,9 +55,19 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
 
   async getLatestLiveData() {
     let livePriceData = await this.livePrice.getCryptoLivePrice().toPromise();
+    livePriceData = this.processLivePriceData(livePriceData);
     console.log(livePriceData);
     this.liveData = livePriceData;
     this.isLiveDataAvailable = true;
+  }
+
+  processLivePriceData(livePriceData:any) {
+    let liveData:any = {};
+    livePriceData.forEach((item:any) => {
+      let key = item.market.toLowerCase();
+      liveData[key]=item;
+    })
+    return liveData;
   }
 
   processJsonData() {
@@ -115,7 +125,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       let symbol = row.coin.toLowerCase();
       if (this.liveData[symbol]) {
         let currentPrice = Number(
-          parseFloat(this.liveData[symbol]?.last).toFixed(8)
+          parseFloat(this.liveData[symbol]?.last_price).toFixed(8)
         );
         let currentValue = currentPrice * row.volume;
         row.currentPrice = currentPrice;
