@@ -390,11 +390,11 @@
         "formattedCurrentValue": "₹2,541.21527934",
         "formattedProfitOrLossValue": "-₹8,505.33727266"
     },
-    "MATICINR": {
+    "POLINR": {
         "volume": 607.3371810000001,
         "averagePrice": 61.1685929589086,
         "totalPrice": 37149.9608134,
-        "coin": "MATICINR",
+        "coin": "POLINR",
         "currentPrice": 55.792,
         "currentValue": 33884.55600235201,
         "profitOrLossValue": -3265.4048110479926,
