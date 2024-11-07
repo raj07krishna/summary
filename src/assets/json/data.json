@@ -119,9 +119,9 @@
         "formattedProfitOrLossValue": "-₹93,830.40455382"
     },
     "BTCINR": {
-        "volume": 0.02470919,
-        "averagePrice": 2893622.509276913,
-        "totalPrice": 71499.06837000001,
+        "volume": 0.0170353,
+        "averagePrice":  3503305.644749430,
+        "totalPrice":  59679.86,
         "coin": "BTCINR",
         "currentPrice": 2975000,
         "currentValue": 73509.84025,
