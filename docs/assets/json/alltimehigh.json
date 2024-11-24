@@ -199,5 +199,22 @@
   "TWTINR": {
     "coin": "TWTINR",
     "allTimeHigh": 0
+  },
+  "BONKINR": {
+    "coin": "BONKINR",
+    "allTimeHigh": 0.0050
+  },
+  "FETINR": {
+    "coin": "FETINR",
+    "allTimeHigh": 292.99
+  }
+  ,
+  "POLYXINR": {
+    "coin": "POLYXINR",
+    "allTimeHigh": 63.72  
+  },
+  "SCINR": {
+    "coin": "SCINR",
+    "allTimeHigh": 9.43
   }
 }
