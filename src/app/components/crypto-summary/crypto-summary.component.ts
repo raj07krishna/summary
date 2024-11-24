@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { LivePriceService } from '../../services/live-price.service';
 import { MatTableDataSource } from '@angular/material/table';
 import * as XLSX from 'xlsx';
@@ -34,11 +34,11 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   unavailableInvestedvalue: number = 0;
   unavailableFormattedCurrentValue = '';
   unavailableFormattedInvestedvalue = '';
-  url = 'assets/json/data.json';
-  alltimehighUrl = 'assets/json/alltimehigh.json'
-  allTimeHighMap=new Map();
+  @Input() url = '';
+  alltimehighUrl = 'assets/json/alltimehigh.json';
+  allTimeHighMap = new Map();
   TotalProfitPossible = 0;
-  formattedTotalProfitPossible = ''
+  formattedTotalProfitPossible = '';
 
   constructor(private livePrice: LivePriceService, private http: HttpClient) {}
 
@@ -46,7 +46,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
     this.http.get(this.alltimehighUrl).subscribe((jsonData) => {
       this.allTimeHighMap = new Map(Object.entries(jsonData));
       this.processJsonData();
-    })
+    });
   }
 
   ngAfterViewInit() {
@@ -61,12 +61,12 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
     this.isLiveDataAvailable = true;
   }
 
-  processLivePriceData(livePriceData:any) {
-    let liveData:any = {};
-    livePriceData.forEach((item:any) => {
+  processLivePriceData(livePriceData: any) {
+    let liveData: any = {};
+    livePriceData.forEach((item: any) => {
       let key = item.market.toLowerCase();
-      liveData[key]=item;
-    })
+      liveData[key] = item;
+    });
     return liveData;
   }
 
@@ -104,10 +104,15 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
           obj['isProfitable'] = false;
           obj['profitPercentage'] = 0;
           this.cryptoMap.set(obj['coin'], obj);
-          if(this.allTimeHighMap.has(value['coin'])) {
-            obj['allTimeHighPrice'] = this.allTimeHighMap.get(value['coin']).allTimeHigh;
-            obj['maxProfitPossible'] = obj['allTimeHighPrice'] * value['volume'] - value['totalPrice'];
-            obj['maxProfitPossiblePercentage'] =  Math.floor(((obj['maxProfitPossible'])/value['totalPrice']) * 100)
+          if (this.allTimeHighMap.has(value['coin'])) {
+            obj['allTimeHighPrice'] = this.allTimeHighMap.get(
+              value['coin']
+            ).allTimeHigh;
+            obj['maxProfitPossible'] =
+              obj['allTimeHighPrice'] * value['volume'] - value['totalPrice'];
+            obj['maxProfitPossiblePercentage'] = Math.floor(
+              (obj['maxProfitPossible'] / value['totalPrice']) * 100
+            );
           }
           this.dataSourceArray.push(obj);
         }
@@ -117,7 +122,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
     });
   }
 
-  async refresh() {
+  async refresh(isclick = false) {
     this.currentValue = 0;
     this.investedvalue = 0;
     await this.getLatestLiveData();
@@ -129,10 +134,13 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         );
         let currentValue = currentPrice * row.volume;
         row.currentPrice = currentPrice;
-        if(currentPrice > row['allTimeHighPrice'] ) {
+        if (currentPrice > row['allTimeHighPrice']) {
           row['allTimeHighPrice'] = currentPrice;
-          row['maxProfitPossible'] = (row['allTimeHighPrice'] * row['volume']) - row['totalPrice'];
-          row['maxProfitPossiblePercentage'] =  Math.floor((row['maxProfitPossible']/row['totalPrice']) * 100)
+          row['maxProfitPossible'] =
+            row['allTimeHighPrice'] * row['volume'] - row['totalPrice'];
+          row['maxProfitPossiblePercentage'] = Math.floor(
+            (row['maxProfitPossible'] / row['totalPrice']) * 100
+          );
         }
         row.currentValue = currentValue;
         row.profitOrLossValue = currentValue - row.totalPrice;
@@ -140,14 +148,18 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         row.profitPercentage = (row.profitOrLossValue / row.totalPrice) * 100;
         this.currentValue += row.currentValue;
         this.investedvalue += row.totalPrice;
-        this.TotalProfitPossible +=row.maxProfitPossible;
-        this.dataSourceForAvaialble.data.push(row);
+        this.TotalProfitPossible += row.maxProfitPossible;
+        if (!isclick) {
+          this.dataSourceForAvaialble.data.push(row);
+        }
         this.applyIndianCurrencyFormatter(row);
       } else {
         this.unavailableCurrentValue += row.currentValue;
         this.unavailableInvestedvalue += row.totalPrice;
+        if (!isclick) {
+          this.dataSourceForUnavaialble.data.push(row);
+        }
         this.applyIndianCurrencyFormatter(row);
-        this.dataSourceForUnavaialble.data.push(row);
       }
       this.dataSourceForAvaialble.sort = this.sort;
       this.dataSourceForUnavaialble.sort = this.sort;
@@ -256,13 +268,14 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       style: 'currency',
       currency: 'INR',
     });
-    obj['maxProfitPossible'] = Number(
-      obj['maxProfitPossible']
-    ).toLocaleString('en-IN', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 8,
-      style: 'currency',
-      currency: 'INR',
-    });
+    obj['maxProfitPossible'] = Number(obj['maxProfitPossible']).toLocaleString(
+      'en-IN',
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 8,
+        style: 'currency',
+        currency: 'INR',
+      }
+    );
   }
 }

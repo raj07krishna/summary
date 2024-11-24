@@ -15,13 +15,15 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { CryptoSummaryComponent } from './components/crypto-summary/crypto-summary.component';
+import { AllSummaryComponent } from './components/all-summary/all-summary.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ExcelReaderComponent,
-    CryptoSummaryComponent
+    CryptoSummaryComponent,
+    AllSummaryComponent
   ],
   imports: [
     BrowserModule,
