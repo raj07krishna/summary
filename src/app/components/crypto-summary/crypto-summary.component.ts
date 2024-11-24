@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { LivePriceService } from '../../services/live-price.service';
 import { MatTableDataSource } from '@angular/material/table';
 import * as XLSX from 'xlsx';
@@ -154,9 +160,9 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         }
         this.applyIndianCurrencyFormatter(row);
       } else {
-        this.unavailableCurrentValue += row.currentValue;
-        this.unavailableInvestedvalue += row.totalPrice;
         if (!isclick) {
+          this.unavailableCurrentValue += row.currentValue;
+          this.unavailableInvestedvalue += row.totalPrice;
           this.dataSourceForUnavaialble.data.push(row);
         }
         this.applyIndianCurrencyFormatter(row);
