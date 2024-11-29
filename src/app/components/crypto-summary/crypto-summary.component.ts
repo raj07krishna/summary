@@ -45,6 +45,8 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   allTimeHighMap = new Map();
   TotalProfitPossible = 0;
   formattedTotalProfitPossible = '';
+  KyrenTotalProfitPossible = 0;
+  formattedKyrenTotalProfitPossible = '';
 
   constructor(private livePrice: LivePriceService, private http: HttpClient) {}
 
@@ -155,6 +157,14 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
             (row['maxProfitPossible'] / row['totalPrice']) * 100
           );
         }
+        if (currentPrice > row['combinedHighValue']) {
+          row['combinedHighValue'] = currentPrice;
+          row['KyrenProfitPossible'] =
+            row['combinedHighValue'] * row['volume'] - row['totalPrice'];
+          row['KyrenProfitPossiblePercentage'] = Math.floor(
+            (row['KyrenProfitPossible'] / row['totalPrice']) * 100
+          );
+        }
         row.currentValue = currentValue;
         row.profitOrLossValue = currentValue - row.totalPrice;
         if (row.profitOrLossValue > 0) row.isProfitable = true;
@@ -162,6 +172,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         this.currentValue += row.currentValue;
         this.investedvalue += row.totalPrice;
         this.TotalProfitPossible += row.maxProfitPossible;
+        this.KyrenTotalProfitPossible += row.KyrenProfitPossible;
         if (!isclick) {
           this.dataSourceForAvaialble.data.push(row);
         }
