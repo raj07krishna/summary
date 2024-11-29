@@ -123,6 +123,9 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
             obj['maxProfitPossiblePercentage'] = Math.floor(
               (obj['maxProfitPossible'] / value['totalPrice']) * 100
             );
+            obj['combinedHighValue'] = this.allTimeHighMap.get(
+              value['coin']
+            ).combinedHighValue;
             obj['KyrenProfitPossible'] =
               obj['combinedHighValue'] * value['volume'] - value['totalPrice'];
             obj['KyrenProfitPossiblePercentage'] = Math.floor(
@@ -224,6 +227,14 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
     });
     this.formattedTotalProfitPossible = Number(
       this.TotalProfitPossible
+    ).toLocaleString('en-IN', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+      style: 'currency',
+      currency: 'INR',
+    });
+    this.formattedKyrenTotalProfitPossible = Number(
+      this.KyrenTotalProfitPossible
     ).toLocaleString('en-IN', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
