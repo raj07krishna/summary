@@ -95,6 +95,8 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       this.displayedColumns.push('profitPercentage');
       this.displayedColumns.push('maxProfitPossible');
       this.displayedColumns.push('maxProfitPossiblePercentage');
+      this.displayedColumns.push('KyrenProfitPossible');
+      this.displayedColumns.push('KyrenProfitPossiblePercentage');
 
       Object.values(this.data).forEach((value: any) => {
         let obj = Object.create({});
@@ -118,6 +120,11 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
               obj['allTimeHighPrice'] * value['volume'] - value['totalPrice'];
             obj['maxProfitPossiblePercentage'] = Math.floor(
               (obj['maxProfitPossible'] / value['totalPrice']) * 100
+            );
+            obj['KyrenProfitPossible'] =
+              obj['combinedHighValue'] * value['volume'] - value['totalPrice'];
+            obj['KyrenProfitPossiblePercentage'] = Math.floor(
+              (obj['KyrenProfitPossible'] / value['totalPrice']) * 100
             );
           }
           this.dataSourceArray.push(obj);

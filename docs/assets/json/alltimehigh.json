@@ -1,220 +1,269 @@
 {
   "ADAINR": {
     "coin": "ADAINR",
-    "allTimeHigh": 236
+    "allTimeHigh": 236,
+    "combinedHighValue": 721.04
   },
   "ATOMINR": {
     "coin": "ATOMINR",
-    "allTimeHigh": 3590
+    "allTimeHigh": 3590,
+    "combinedHighValue": 7463.69
   },
   "AVAXINR": {
     "coin": "AVAXINR",
-    "allTimeHigh": 11900
+    "allTimeHigh": 11900,
+    "combinedHighValue": 34489
   },
   "AXSINR": {
     "coin": "AXSINR",
-    "allTimeHigh": 13500
+    "allTimeHigh": 13500,
+    "combinedHighValue": 6215.14
   },
   "BABYDOGEINR": {
     "coin": "BABYDOGEINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
 
   "BNBINR": {
     "coin": "BNBINR",
-    "allTimeHigh": 54000
+    "allTimeHigh": 54000,
+    "combinedHighValue": 0
   },
   "BRISEINR": {
     "coin": "BRISEINR",
-    "allTimeHigh": 0.0001418
+    "allTimeHigh": 0.0001418,
+    "combinedHighValue": 0
   },
   "BTCINR": {
     "coin": "BTCINR",
-    "allTimeHigh": 5855000
+    "allTimeHigh": 5855000,
+    "combinedHighValue": 12667500
   },
   "BTTCINR": {
     "coin": "BTTCINR",
-    "allTimeHigh": 0.0002558
+    "allTimeHigh": 0.0002558,
+    "combinedHighValue": 0.00136749
   },
   "CATEINR": {
     "coin": "CATEINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "CELRINR": {
     "coin": "CELRINR",
-    "allTimeHigh": 14.8108
+    "allTimeHigh": 14.8108,
+    "combinedHighValue": 0
   },
   "DOGEINR": {
     "coin": "DOGEINR",
-    "allTimeHigh": 58.38
+    "allTimeHigh": 58.38,
+    "combinedHighValue": 404.78
   },
   "DOTINR": {
     "coin": "DOTINR",
-    "allTimeHigh": 4397
+    "allTimeHigh": 4397,
+    "combinedHighValue": 7064
   },
   "ELONINR": {
     "coin": "ELONINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "ENJINR": {
     "coin": "ENJINR",
-    "allTimeHigh": 372
+    "allTimeHigh": 372,
+    "combinedHighValue": 280.50
   },
   "ETHINR": {
     "coin": "ETHINR",
-    "allTimeHigh": 384899
+    "allTimeHigh": 384899,
+    "combinedHighValue": 2473181
   },
   "FILINR": {
     "coin": "FILINR",
-    "allTimeHigh": 17632
+    "allTimeHigh": 17632,
+    "combinedHighValue": 3176.20
   },
   "FRONTINR": {
     "coin": "FRONTINR",
-    "allTimeHigh": 300
+    "allTimeHigh": 300,
+    "combinedHighValue": 0
   },
   "FTMINR": {
     "coin": "FTMINR",
-    "allTimeHigh": 277
+    "allTimeHigh": 277,
+    "combinedHighValue": 968.37
   },
   "GALAINR": {
     "coin": "GALAINR",
-    "allTimeHigh": 53.6
+    "allTimeHigh": 53.6,
+    "combinedHighValue": 37.22
   },
   "HBARINR": {
     "coin": "HBARINR",
-    "allTimeHigh": 33.94
+    "allTimeHigh": 33.94,
+    "combinedHighValue": 109.67
   },
   "IOTXINR": {
     "coin": "IOTXINR",
-    "allTimeHigh": 18.72
+    "allTimeHigh": 18.72,
+    "combinedHighValue": 0
   },
   "MANAINR": {
     "coin": "MANAINR",
-    "allTimeHigh": 452
+    "allTimeHigh": 452,
+    "combinedHighValue": 599
   },
   "POLINR": {
     "coin": "POLINR",
-    "allTimeHigh": 229
+    "allTimeHigh": 229,
+    "combinedHighValue": 131.23 
   },
-  "POLYINR": {
-    "coin": "POLYINR",
-    "allTimeHigh": 0
+  "POLYXINR": {
+    "coin": "POLYXINR",
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "QUACKINR": {
     "coin": "QUACKINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "RENINR": {
     "coin": "RENINR",
-    "allTimeHigh": 125
+    "allTimeHigh": 125,
+    "combinedHighValue": 0
   },
   "SOLINR": {
     "coin": "SOLINR",
-    "allTimeHigh": 20800
+    "allTimeHigh": 20800,
+    "combinedHighValue": 121434
   },
   "SHIBINR": {
     "coin": "SHIBINR",
-    "allTimeHigh": 0.009
+    "allTimeHigh": 0.009,
+    "combinedHighValue": 0.003
   },
   "TRXINR": {
     "coin": "TRXINR",
-    "allTimeHigh": 12
+    "allTimeHigh": 12,
+    "combinedHighValue": 206.70
   },
   "VETINR": {
     "coin": "VETINR",
-    "allTimeHigh": 25
+    "allTimeHigh": 25,
+    "combinedHighValue": 40.21
   },
   "WRXINR": {
     "coin": "WRXINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "XLMINR": {
     "coin": "XLMINR",
-    "allTimeHigh": 65
+    "allTimeHigh": 65,
+    "combinedHighValue": 336.69
   },
   "XRPINR": {
     "coin": "XRPINR",
-    "allTimeHigh": 155
+    "allTimeHigh": 155,
+    "combinedHighValue": 784.10
   },
   "runeINR": {
     "coin": "runeINR",
-    "allTimeHigh": 1349
+    "allTimeHigh": 1349,
+    "combinedHighValue": 4786.84
   },
   "LINKINR": {
     "coin": "LINKINR",
-    "allTimeHigh": 4166
+    "allTimeHigh": 4166,
+    "combinedHighValue": 17217
   },
   "KISHUINR": {
     "coin": "KISHUINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "POLYDOGEINR": {
     "coin": "POLYDOGEINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "SAITAMAINR": {
     "coin": "SAITAMAINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "KINGSHIBINR": {
     "coin": "KINGSHIBINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "SFMINR": {
     "coin": "SFMINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "ATLASINR": {
     "coin": "ATLASINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "UFOINR": {
     "coin": "UFOINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "PIXELINR": {
     "coin": "PIXELINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "MIMIRINR": {
     "coin": "MIMIRINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "EVERGROWINR": {
     "coin": "EVERGROWINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "JAIHOINR": {
     "coin": "JAIHOINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "ACHINR": {
     "coin": "ACHINR",
-    "allTimeHigh": 12
+    "allTimeHigh": 12,
+    "combinedHighValue": 0
   },
   "CAKEINR": {
     "coin": "CAKEINR",
-    "allTimeHigh": 2050
+    "allTimeHigh": 2050,
+    "combinedHighValue": 0
   },
   "TWTINR": {
     "coin": "TWTINR",
-    "allTimeHigh": 0
+    "allTimeHigh": 0,
+    "combinedHighValue": 0
   },
   "BONKINR": {
     "coin": "BONKINR",
-    "allTimeHigh": 0.0050
+    "allTimeHigh": 0.0050,
+    "combinedHighValue": 0.00376
   },
   "FETINR": {
     "coin": "FETINR",
-    "allTimeHigh": 292.99
+    "allTimeHigh": 292.99,
+    "combinedHighValue": 0
   }
   ,
-  "POLYXINR": {
-    "coin": "POLYXINR",
-    "allTimeHigh": 63.72  
-  },
   "SCINR": {
     "coin": "SCINR",
-    "allTimeHigh": 9.43
+    "allTimeHigh": 9.43,
+    "combinedHighValue": 0
   }
 }
