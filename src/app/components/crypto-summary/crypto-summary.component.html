@@ -126,7 +126,7 @@
       <ng-container matColumnDef="coin">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>coin</th>
         <td mat-cell *matCellDef="let row"
-        [ngClass]="row.isProfitable ? 'initial' : 'blue'"
+        [ngClass]="row.hasKyrenHighValue ? 'initial' : 'blue'"
         >{{ row.coin }}</td>
       </ng-container>
 
