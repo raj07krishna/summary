@@ -65,6 +65,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSourceForAvaialble.sort = this.sort;
+    this.dataSourceForAvaialble.sortingDataAccessor = (data, header) => data[header];
   }
 
   async getLatestLiveData() {
