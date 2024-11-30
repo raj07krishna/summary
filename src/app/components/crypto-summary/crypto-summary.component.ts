@@ -43,6 +43,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   @Input() url = '';
   alltimehighUrl = 'assets/json/alltimehigh.json';
   allTimeHighMap = new Map();
+  onlyKyrenData = false;
   TotalProfitPossible = 0;
   formattedTotalProfitPossible = '';
   KyrenTotalProfitPossible = 0;
@@ -134,15 +135,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
             obj['maxProfitPossiblePercentage'] = Math.floor(
               (obj['maxProfitPossible'] / value['totalPrice']) * 100
             );
-            obj['kyrenHighValue'] = this.allTimeHighMap.get(value['coin'])
-              .kyrenHighValue
-              ? this.allTimeHighMap.get(value['coin']).kyrenHighValue
-              : this.allTimeHighMap.get(value['coin']).greenHighValue;
-            obj['KyrenProfitPossible'] =
-              obj['kyrenHighValue'] * value['volume'] - value['totalPrice'];
-            obj['KyrenProfitPossiblePercentage'] = Math.floor(
-              (obj['KyrenProfitPossible'] / value['totalPrice']) * 100
-            );
+
             obj['greenHighValue'] = this.allTimeHighMap.get(
               value['coin']
             ).greenHighValue;
@@ -204,6 +197,19 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
             (row['KyrenProfitPossible'] / row['totalPrice']) * 100
           );
         }
+        row['kyrenHighValue'] = this.allTimeHighMap.get(row['coin'])
+          .kyrenHighValue
+          ? this.allTimeHighMap.get(row['coin']).kyrenHighValue
+          : this.onlyKyrenData
+          ? row.currentValue
+          : this.allTimeHighMap.get(row['coin']).greenHighValue
+          ? this.allTimeHighMap.get(row['coin']).greenHighValue
+          : row.currentValue;
+        row['KyrenProfitPossible'] =
+          row['kyrenHighValue'] * row['volume'] - row['totalPrice'];
+        row['KyrenProfitPossiblePercentage'] = Math.floor(
+          (row['KyrenProfitPossible'] / row['totalPrice']) * 100
+        );
         row.currentValue = currentValue;
         row.profitOrLossValue = currentValue - row.totalPrice;
         if (row.profitOrLossValue > 0) row.isProfitable = true;

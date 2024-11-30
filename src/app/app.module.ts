@@ -16,7 +16,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { CryptoSummaryComponent } from './components/crypto-summary/crypto-summary.component';
 import { AllSummaryComponent } from './components/all-summary/all-summary.component';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { AllSummaryComponent } from './components/all-summary/all-summary.compon
     MatInputModule,
     MatButtonToggleModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSlideToggleModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

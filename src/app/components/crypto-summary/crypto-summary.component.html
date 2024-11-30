@@ -1,6 +1,8 @@
 <div class="flex-col">
   <div class="flex-row">
     <button mat-raised-button (click)="processJsonData()">Refresh</button>
+    <mat-slide-toggle [(ngModel)]="onlyKyrenData" (change)="processJsonData()">Show Only Kyren's data</mat-slide-toggle>
+
   </div>
   <div style="display: flex; justify-content: space-between">
     <div>
@@ -170,7 +172,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           Kyren Profit Possible
         </th>
-        <td mat-cell *matCellDef="let row">{{ row.KyrenProfitPossible }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.KyrenProfitPossible | number : '1.0-2'}}</td>
       </ng-container>
       <ng-container matColumnDef="KyrenProfitPossiblePercentage">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Kyren %</th>
