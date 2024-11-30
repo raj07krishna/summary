@@ -89,8 +89,18 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
 
   processJsonData() {
     this.dataSourceForAvaialble = new MatTableDataSource<any>([]);
-    this.dataSourceForAvaialble.data = [];
     this.displayedColumns = [];
+    this.dataSourceArray = [];
+    this.TotalProfitPossible = 0;
+    this.formattedTotalProfitPossible = '';
+    this.KyrenTotalProfitPossible = 0;
+    this.formattedKyrenTotalProfitPossible = '';
+    this.GreenTotalProfitPossible = 0;
+    this.formattedGreenTotalProfitPossible = '';
+    this.GrayTotalProfitPossible = 0;
+    this.formattedGrayTotalProfitPossible = '';
+    this.RedTotalProfitPossible = 0;
+    this.formattedRedTotalProfitPossible = '';
     this.http.get(this.url).subscribe((jsonData: any) => {
       this.data = jsonData;
       console.log(this.data);
