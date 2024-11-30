@@ -333,7 +333,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       'en-IN',
       {
         minimumFractionDigits: 2,
-        maximumFractionDigits: 8,
+        maximumFractionDigits: 2,
         style: 'currency',
         currency: 'INR',
       }
@@ -342,7 +342,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       'en-IN',
       {
         minimumFractionDigits: 2,
-        maximumFractionDigits: 8,
+        maximumFractionDigits: 2,
         style: 'currency',
         currency: 'INR',
       }
@@ -351,7 +351,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       'en-IN',
       {
         minimumFractionDigits: 2,
-        maximumFractionDigits: 8,
+        maximumFractionDigits: 2,
         style: 'currency',
         currency: 'INR',
       }
@@ -360,7 +360,7 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       obj['profitOrLossValue']
     ).toLocaleString('en-IN', {
       minimumFractionDigits: 2,
-      maximumFractionDigits: 8,
+      maximumFractionDigits: 2,
       style: 'currency',
       currency: 'INR',
     });
@@ -368,7 +368,43 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       'en-IN',
       {
         minimumFractionDigits: 2,
-        maximumFractionDigits: 8,
+        maximumFractionDigits: 2,
+        style: 'currency',
+        currency: 'INR',
+      }
+    );
+    obj['GreenProfitPossible'] = Number(obj['GreenProfitPossible']).toLocaleString(
+      'en-IN',
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+        style: 'currency',
+        currency: 'INR',
+      }
+    );
+    obj['GrayProfitPossible'] = Number(obj['GrayProfitPossible']).toLocaleString(
+      'en-IN',
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+        style: 'currency',
+        currency: 'INR',
+      }
+    );
+    obj['RedProfitPossible'] = Number(obj['RedProfitPossible']).toLocaleString(
+      'en-IN',
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+        style: 'currency',
+        currency: 'INR',
+      }
+    );
+    obj['KyrenProfitPossible'] = Number(obj['KyrenProfitPossible']).toLocaleString(
+      'en-IN',
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
         style: 'currency',
         currency: 'INR',
       }

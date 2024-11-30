@@ -21,7 +21,7 @@
         >
           Profit/Loss
           <mat-divider></mat-divider>
-          {{ currentValue - investedvalue }}
+          {{ currentValue - investedvalue | number : '1.0-2'}}
         </mat-button-toggle>
         <mat-button-toggle
           [ngClass]="
@@ -33,7 +33,7 @@
         >
           %
           <mat-divider></mat-divider>
-          {{ ((currentValue - investedvalue) / investedvalue) * 100 }}
+          {{ ((currentValue - investedvalue) / investedvalue) * 100 | number : '1.0-2' }}
         </mat-button-toggle>
         <mat-button-toggle value="italic">
           Max Profit Possible
