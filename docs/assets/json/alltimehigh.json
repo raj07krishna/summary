@@ -2,268 +2,480 @@
   "ADAINR": {
     "coin": "ADAINR",
     "allTimeHigh": 236,
-    "combinedHighValue": 721.04
+    "combinedHighValue": 721.04,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "ATOMINR": {
     "coin": "ATOMINR",
     "allTimeHigh": 3590,
-    "combinedHighValue": 7463.69
+    "combinedHighValue": 7463.69,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "AVAXINR": {
     "coin": "AVAXINR",
     "allTimeHigh": 11900,
-    "combinedHighValue": 34489
+    "combinedHighValue": 34489,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "AXSINR": {
     "coin": "AXSINR",
     "allTimeHigh": 13500,
-    "combinedHighValue": 6215.14
+    "combinedHighValue": 6215.14,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "BABYDOGEINR": {
     "coin": "BABYDOGEINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
 
   "BNBINR": {
     "coin": "BNBINR",
     "allTimeHigh": 54000,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "BRISEINR": {
     "coin": "BRISEINR",
     "allTimeHigh": 0.0001418,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "BTCINR": {
     "coin": "BTCINR",
     "allTimeHigh": 5855000,
-    "combinedHighValue": 12667500
+    "combinedHighValue": 12667500,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "BTTCINR": {
     "coin": "BTTCINR",
     "allTimeHigh": 0.0002558,
-    "combinedHighValue": 0.00136749
+    "combinedHighValue": 0.00136749,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "CATEINR": {
     "coin": "CATEINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "CELRINR": {
     "coin": "CELRINR",
     "allTimeHigh": 14.8108,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "DOGEINR": {
     "coin": "DOGEINR",
     "allTimeHigh": 58.38,
-    "combinedHighValue": 404.78
+    "combinedHighValue": 404.78,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "DOTINR": {
     "coin": "DOTINR",
     "allTimeHigh": 4397,
-    "combinedHighValue": 7064
+    "combinedHighValue": 7064,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "ELONINR": {
     "coin": "ELONINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "ENJINR": {
     "coin": "ENJINR",
     "allTimeHigh": 372,
-    "combinedHighValue": 280.50
+    "combinedHighValue": 280.50,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "ETHINR": {
     "coin": "ETHINR",
     "allTimeHigh": 384899,
-    "combinedHighValue": 2473181
+    "combinedHighValue": 2473181,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "FILINR": {
     "coin": "FILINR",
     "allTimeHigh": 17632,
-    "combinedHighValue": 3176.20
+    "combinedHighValue": 3176.20,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "FRONTINR": {
     "coin": "FRONTINR",
     "allTimeHigh": 300,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "FTMINR": {
     "coin": "FTMINR",
     "allTimeHigh": 277,
-    "combinedHighValue": 968.37
+    "combinedHighValue": 968.37,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "GALAINR": {
     "coin": "GALAINR",
     "allTimeHigh": 53.6,
-    "combinedHighValue": 37.22
+    "combinedHighValue": 37.22,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "HBARINR": {
     "coin": "HBARINR",
     "allTimeHigh": 33.94,
-    "combinedHighValue": 109.67
+    "combinedHighValue": 109.67,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "IOTXINR": {
     "coin": "IOTXINR",
     "allTimeHigh": 18.72,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "MANAINR": {
     "coin": "MANAINR",
     "allTimeHigh": 452,
-    "combinedHighValue": 599
+    "combinedHighValue": 599,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "POLINR": {
     "coin": "POLINR",
     "allTimeHigh": 229,
-    "combinedHighValue": 131.23 
+    "combinedHighValue": 131.23 ,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "POLYXINR": {
     "coin": "POLYXINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "QUACKINR": {
     "coin": "QUACKINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "RENINR": {
     "coin": "RENINR",
     "allTimeHigh": 125,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "SOLINR": {
     "coin": "SOLINR",
     "allTimeHigh": 20800,
-    "combinedHighValue": 121434
+    "combinedHighValue": 121434,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "SHIBINR": {
     "coin": "SHIBINR",
     "allTimeHigh": 0.009,
-    "combinedHighValue": 0.003
+    "combinedHighValue": 0.003,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "TRXINR": {
     "coin": "TRXINR",
     "allTimeHigh": 12,
-    "combinedHighValue": 206.70
+    "combinedHighValue": 206.70,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "VETINR": {
     "coin": "VETINR",
     "allTimeHigh": 25,
-    "combinedHighValue": 40.21
+    "combinedHighValue": 40.21,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "WRXINR": {
     "coin": "WRXINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "XLMINR": {
     "coin": "XLMINR",
     "allTimeHigh": 65,
-    "combinedHighValue": 336.69
+    "combinedHighValue": 336.69,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "XRPINR": {
     "coin": "XRPINR",
     "allTimeHigh": 155,
-    "combinedHighValue": 784.10
+    "combinedHighValue": 784.10,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "runeINR": {
     "coin": "runeINR",
     "allTimeHigh": 1349,
-    "combinedHighValue": 4786.84
+    "combinedHighValue": 4786.84,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "LINKINR": {
     "coin": "LINKINR",
     "allTimeHigh": 4166,
-    "combinedHighValue": 17217
+    "combinedHighValue": 17217,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "KISHUINR": {
     "coin": "KISHUINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "POLYDOGEINR": {
     "coin": "POLYDOGEINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "SAITAMAINR": {
     "coin": "SAITAMAINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "KINGSHIBINR": {
     "coin": "KINGSHIBINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "SFMINR": {
     "coin": "SFMINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "ATLASINR": {
     "coin": "ATLASINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "UFOINR": {
     "coin": "UFOINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "PIXELINR": {
     "coin": "PIXELINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "MIMIRINR": {
     "coin": "MIMIRINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "EVERGROWINR": {
     "coin": "EVERGROWINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "JAIHOINR": {
     "coin": "JAIHOINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "ACHINR": {
     "coin": "ACHINR",
     "allTimeHigh": 12,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "CAKEINR": {
     "coin": "CAKEINR",
     "allTimeHigh": 2050,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "TWTINR": {
     "coin": "TWTINR",
     "allTimeHigh": 0,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "BONKINR": {
     "coin": "BONKINR",
     "allTimeHigh": 0.0050,
-    "combinedHighValue": 0.00376
+    "combinedHighValue": 0.00376,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   },
   "FETINR": {
     "coin": "FETINR",
     "allTimeHigh": 292.99,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   }
   ,
   "SCINR": {
     "coin": "SCINR",
     "allTimeHigh": 9.43,
-    "combinedHighValue": 0
+    "combinedHighValue": 0,
+    "greenHighValue": 0,
+    "greyHighValue": 0,
+    "redHighValue": 0,
+    "kyrenHighValue":0
   }
 }

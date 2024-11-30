@@ -37,6 +37,21 @@
             <mat-divider></mat-divider>
             {{formattedKyrenTotalProfitPossible }}
           </mat-button-toggle>
+          <mat-button-toggle value="italic">
+            Green Zone Profit
+            <mat-divider></mat-divider>
+            {{formattedGreenTotalProfitPossible }}
+          </mat-button-toggle>
+          <mat-button-toggle value="italic">
+            Gray Zone Profit
+            <mat-divider></mat-divider>
+            {{formattedGrayTotalProfitPossible }}
+          </mat-button-toggle>
+          <mat-button-toggle value="italic">
+            Red Zone Profit
+            <mat-divider></mat-divider>
+            {{formattedRedTotalProfitPossible }}
+          </mat-button-toggle>
         </mat-button-toggle-group>
       </div>
       <div>
@@ -92,16 +107,10 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> totalPrice </th>
           <td mat-cell *matCellDef="let row"> {{row.formattedTotalPrice }} </td>
         </ng-container>
-
   
         <ng-container matColumnDef="currentPrice">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> current Price </th>
           <td mat-cell *matCellDef="let row"> {{row.formattedCurrentPrice }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="allTimeHighPrice">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> allTimeHigh </th>
-          <td mat-cell *matCellDef="let row"> {{row.allTimeHighPrice }} </td>
         </ng-container>
   
         <ng-container matColumnDef="currentValue">
@@ -118,14 +127,6 @@
         <ng-container matColumnDef="profitPercentage">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Profit/Loss %</th>
           <td mat-cell *matCellDef="let row" [ngClass]="row.isProfitable ? 'green': 'red'"> {{row.profitPercentage}} </td>
-        </ng-container>
-        <ng-container matColumnDef="maxProfitPossible">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> maxProfitPossible </th>
-          <td mat-cell *matCellDef="let row"> {{row.maxProfitPossible}} </td>
-        </ng-container>
-        <ng-container matColumnDef="maxProfitPossiblePercentage">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> maxProfit % </th>
-          <td mat-cell *matCellDef="let row"> {{row.maxProfitPossiblePercentage}} </td>
         </ng-container>
   
         <ng-container matColumnDef="KyrenProfitPossible">

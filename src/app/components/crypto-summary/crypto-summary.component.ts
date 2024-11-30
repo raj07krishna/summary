@@ -47,6 +47,12 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
   formattedTotalProfitPossible = '';
   KyrenTotalProfitPossible = 0;
   formattedKyrenTotalProfitPossible = '';
+  GreenTotalProfitPossible = 0;
+  formattedGreenTotalProfitPossible = '';
+  GrayTotalProfitPossible = 0;
+  formattedGrayTotalProfitPossible = '';
+  RedTotalProfitPossible = 0;
+  formattedRedTotalProfitPossible = '';
 
   constructor(private livePrice: LivePriceService, private http: HttpClient) {}
 
@@ -90,15 +96,18 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
       this.displayedColumns.push('coin');
       this.displayedColumns.push('averagePrice');
       this.displayedColumns.push('totalPrice');
-      this.displayedColumns.push('allTimeHighPrice');
       this.displayedColumns.push('currentPrice');
       this.displayedColumns.push('currentValue');
       this.displayedColumns.push('profitOrLossValue');
       this.displayedColumns.push('profitPercentage');
-      this.displayedColumns.push('maxProfitPossible');
-      this.displayedColumns.push('maxProfitPossiblePercentage');
       this.displayedColumns.push('KyrenProfitPossible');
       this.displayedColumns.push('KyrenProfitPossiblePercentage');
+      this.displayedColumns.push('GreenProfitPossible');
+      this.displayedColumns.push('GreenProfitPossiblePercentage');
+      this.displayedColumns.push('GrayProfitPossible');
+      this.displayedColumns.push('GrayProfitPossiblePercentage');
+      this.displayedColumns.push('RedProfitPossible');
+      this.displayedColumns.push('RedProfitPossiblePercentage');
 
       Object.values(this.data).forEach((value: any) => {
         let obj = Object.create({});
@@ -123,13 +132,37 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
             obj['maxProfitPossiblePercentage'] = Math.floor(
               (obj['maxProfitPossible'] / value['totalPrice']) * 100
             );
-            obj['combinedHighValue'] = this.allTimeHighMap.get(
+            obj['kyrenHighValue'] = this.allTimeHighMap.get(
               value['coin']
-            ).combinedHighValue;
+            ).kyrenHighValue;
             obj['KyrenProfitPossible'] =
-              obj['combinedHighValue'] * value['volume'] - value['totalPrice'];
+              obj['kyrenHighValue'] * value['volume'] - value['totalPrice'];
             obj['KyrenProfitPossiblePercentage'] = Math.floor(
               (obj['KyrenProfitPossible'] / value['totalPrice']) * 100
+            );
+            obj['greenHighValue'] = this.allTimeHighMap.get(
+              value['coin']
+            ).greenHighValue;
+            obj['GreenProfitPossible'] =
+              obj['greenHighValue'] * value['volume'] - value['totalPrice'];
+            obj['GreenProfitPossiblePercentage'] = Math.floor(
+              (obj['GreenProfitPossible'] / value['totalPrice']) * 100
+            );
+            obj['greyHighValue'] = this.allTimeHighMap.get(
+              value['coin']
+            ).greyHighValue;
+            obj['GrayProfitPossible'] =
+              obj['greyHighValue'] * value['volume'] - value['totalPrice'];
+            obj['GrayProfitPossiblePercentage'] = Math.floor(
+              (obj['GrayProfitPossible'] / value['totalPrice']) * 100
+            );
+            obj['redHighValue'] = this.allTimeHighMap.get(
+              value['coin']
+            ).redHighValue;
+            obj['RedProfitPossible'] =
+              obj['redHighValue'] * value['volume'] - value['totalPrice'];
+            obj['RedProfitPossiblePercentage'] = Math.floor(
+              (obj['RedProfitPossible'] / value['totalPrice']) * 100
             );
           }
           this.dataSourceArray.push(obj);
@@ -175,6 +208,9 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         this.currentValue += row.currentValue;
         this.investedvalue += row.totalPrice;
         this.TotalProfitPossible += row.maxProfitPossible;
+        this.GreenTotalProfitPossible += row.GreenProfitPossible;
+        this.GrayTotalProfitPossible += row.GrayProfitPossible;
+        this.RedTotalProfitPossible += row.RedProfitPossible;
         this.KyrenTotalProfitPossible += row.KyrenProfitPossible;
         if (!isclick) {
           this.dataSourceForAvaialble.data.push(row);
@@ -235,6 +271,30 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
     });
     this.formattedKyrenTotalProfitPossible = Number(
       this.KyrenTotalProfitPossible
+    ).toLocaleString('en-IN', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+      style: 'currency',
+      currency: 'INR',
+    });
+    this.formattedGreenTotalProfitPossible = Number(
+      this.GreenTotalProfitPossible
+    ).toLocaleString('en-IN', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+      style: 'currency',
+      currency: 'INR',
+    });
+    this.formattedGrayTotalProfitPossible = Number(
+      this.GrayTotalProfitPossible
+    ).toLocaleString('en-IN', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+      style: 'currency',
+      currency: 'INR',
+    });
+    this.formattedRedTotalProfitPossible = Number(
+      this.RedTotalProfitPossible
     ).toLocaleString('en-IN', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
