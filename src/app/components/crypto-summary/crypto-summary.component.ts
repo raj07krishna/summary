@@ -201,10 +201,10 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
           .kyrenHighValue
           ? this.allTimeHighMap.get(row['coin']).kyrenHighValue
           : this.onlyKyrenData
-          ? row.currentValue
+          ? row.currentPrice
           : this.allTimeHighMap.get(row['coin']).greenHighValue
           ? this.allTimeHighMap.get(row['coin']).greenHighValue
-          : row.currentValue;
+          : row.currentPrice;
         row['KyrenProfitPossible'] =
           row['kyrenHighValue'] * row['volume'] - row['totalPrice'];
         row['KyrenProfitPossiblePercentage'] = Math.floor(
