@@ -65,7 +65,8 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSourceForAvaialble.sort = this.sort;
-    this.dataSourceForAvaialble.sortingDataAccessor = (data, header) => data[header];
+    this.dataSourceForAvaialble.sortingDataAccessor = (data, header) =>
+      data[header];
   }
 
   async getLatestLiveData() {
@@ -214,16 +215,12 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         this.GrayTotalProfitPossible += row.GrayProfitPossible;
         this.RedTotalProfitPossible += row.RedProfitPossible;
         this.KyrenTotalProfitPossible += row.KyrenProfitPossible;
-        if (!isclick) {
-          this.dataSourceForAvaialble.data.push(row);
-        }
+        this.dataSourceForAvaialble.data.push(row);
         this.applyIndianCurrencyFormatter(row);
       } else {
-        if (!isclick) {
-          this.unavailableCurrentValue += row.currentValue;
-          this.unavailableInvestedvalue += row.totalPrice;
-          this.dataSourceForUnavaialble.data.push(row);
-        }
+        this.unavailableCurrentValue += row.currentValue;
+        this.unavailableInvestedvalue += row.totalPrice;
+        this.dataSourceForUnavaialble.data.push(row);
         this.applyIndianCurrencyFormatter(row);
       }
       this.dataSourceForAvaialble.sort = this.sort;
@@ -374,41 +371,38 @@ export class CryptoSummaryComponent implements OnInit, AfterViewInit {
         currency: 'INR',
       }
     );
-    obj['GreenProfitPossible'] = Number(obj['GreenProfitPossible']).toLocaleString(
-      'en-IN',
-      {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-        style: 'currency',
-        currency: 'INR',
-      }
-    );
-    obj['GrayProfitPossible'] = Number(obj['GrayProfitPossible']).toLocaleString(
-      'en-IN',
-      {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-        style: 'currency',
-        currency: 'INR',
-      }
-    );
-    obj['RedProfitPossible'] = Number(obj['RedProfitPossible']).toLocaleString(
-      'en-IN',
-      {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-        style: 'currency',
-        currency: 'INR',
-      }
-    );
-    obj['KyrenProfitPossible'] = Number(obj['KyrenProfitPossible']).toLocaleString(
-      'en-IN',
-      {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-        style: 'currency',
-        currency: 'INR',
-      }
-    );
+    // obj['GreenProfitPossible'] = Number(
+    //   obj['GreenProfitPossible']
+    // ).toLocaleString('en-IN', {
+    //   minimumFractionDigits: 2,
+    //   maximumFractionDigits: 2,
+    //   style: 'currency',
+    //   currency: 'INR',
+    // });
+    // obj['GrayProfitPossible'] = Number(
+    //   obj['GrayProfitPossible']
+    // ).toLocaleString('en-IN', {
+    //   minimumFractionDigits: 2,
+    //   maximumFractionDigits: 2,
+    //   style: 'currency',
+    //   currency: 'INR',
+    // });
+    // obj['RedProfitPossible'] = Number(obj['RedProfitPossible']).toLocaleString(
+    //   'en-IN',
+    //   {
+    //     minimumFractionDigits: 2,
+    //     maximumFractionDigits: 2,
+    //     style: 'currency',
+    //     currency: 'INR',
+    //   }
+    // );
+    // obj['KyrenProfitPossible'] = Number(
+    //   obj['KyrenProfitPossible']
+    // ).toLocaleString('en-IN', {
+    //   minimumFractionDigits: 2,
+    //   maximumFractionDigits: 2,
+    //   style: 'currency',
+    //   currency: 'INR',
+    // });
   }
 }

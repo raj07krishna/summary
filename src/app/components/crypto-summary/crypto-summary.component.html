@@ -1,6 +1,6 @@
 <div class="flex-col">
   <div class="flex-row">
-    <button mat-raised-button (click)="refresh(true)">Refresh</button>
+    <button mat-raised-button (click)="processJsonData()">Refresh</button>
   </div>
   <div style="display: flex; justify-content: space-between">
     <div>
@@ -182,7 +182,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           Green Zone
         </th>
-        <td mat-cell *matCellDef="let row">{{ row.GreenProfitPossible }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.GreenProfitPossible | number : '1.0-2'}}</td>
       </ng-container>
       <ng-container matColumnDef="GreenProfitPossiblePercentage">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Green Zone %</th>
@@ -194,7 +194,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           Gray Zone
         </th>
-        <td mat-cell *matCellDef="let row">{{ row.GrayProfitPossible }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.GrayProfitPossible | number : '1.0-2'}}</td>
       </ng-container>
       <ng-container matColumnDef="GrayProfitPossiblePercentage">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Gray Zone %</th>
@@ -206,7 +206,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           Red Zone
         </th>
-        <td mat-cell *matCellDef="let row">{{ row.RedProfitPossible }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.RedProfitPossible | number : '1.0-2'}}</td>
       </ng-container>
       <ng-container matColumnDef="RedProfitPossiblePercentage">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Red Zone %</th>
